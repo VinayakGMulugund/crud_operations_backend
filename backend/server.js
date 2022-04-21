@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config()
 
 const mongoose = require('mongoose')
 
@@ -12,7 +13,7 @@ app.use(cors())
 app.use(express.json());
 
 
-mongoose.connect('process.env.mongo', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.mongo, {useNewUrlParser: true, useUnifiedTopology: true});
 const connected = mongoose.connection;
 connected.once('open', () => {
 	console.log("connection established!!!!")
