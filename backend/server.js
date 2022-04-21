@@ -12,7 +12,7 @@ app.use(cors())
 app.use(express.json());
 
 
-mongoose.connect('mongodb+srv://dbuservin:dbuservin123@cluster0.bmu4c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('process.env.mongo', {useNewUrlParser: true, useUnifiedTopology: true});
 const connected = mongoose.connection;
 connected.once('open', () => {
 	console.log("connection established!!!!")
